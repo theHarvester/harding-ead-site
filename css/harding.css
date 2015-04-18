@@ -1,0 +1,17 @@
+.about-list li {
+    margin-bottom: 10px;
+}
+
+ul.about-list {
+    list-style-image: url('../img/harding/icon_light_bulb_small.png');
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+p {
+   font-size: 16px;
+}
+
+h3.text-muted {
+    line-height: 1.7em;
+}
