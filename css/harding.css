@@ -29,3 +29,61 @@ h3.text-muted {
 .text-primary {
     color: #22964B;
 }
+
+.navbar-default .navbar-brand {
+    color: #22964B;
+}
+
+a {
+    color: #22964B;
+}
+
+.btn-xl, .btn-xl:active, .btn-xl:visited {
+    border:none;
+    background-color: #22964B;
+}
+
+.btn-xl:hover {
+    border:none;
+    background-color: #28A153;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:visited {
+    border:none;
+    background-color: #22964B;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+    border:none;
+    background-color: #28A153;
+}
+
+.timeline>li .timeline-image {
+    background-color: #22964B;
+}
+
+.timeline>li .timeline-image:hover {
+    background-color: #28A153;
+}
+
+a:hover {
+    color:#ffffff;
+}
+
+a.page-scroll:hover {
+    color: #32da79 !important;
+}
+
+li.active a.page-scroll:hover {
+    color: #ffffff !important;
+}
+
+.intro-text a:hover, a:visited, a:active {
+    color: #ffffff !important;
+}
+
+.intro-text .btn {
+    border: 3px #32da79;
+}
