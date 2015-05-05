@@ -66,6 +66,17 @@ a {
     background-color: #28A153;
 }
 
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle:active,
+.navbar-default .navbar-toggle:focus {
+    border:none;
+    background-color: #28A153;
+}
+.navbar-default .navbar-toggle:hover {
+    border:none;
+    background-color: #28A153;
+}
+
 .navbar-default .nav li a:hover, .navbar-default .nav li a:focus {
     color: #32da79;
 }
