@@ -1,4 +1,7 @@
 // Simple solution from
+var form_container = document.getElementById('contact-form-container-hidden');
+var xhr_object = new Webform_Xhr('http://www.vision6.com.au/em/forms/xhr?db=460698&s=163100&a=52551&t=1&k=nNX-aQJicOuiN4_IDdHloi_RWPFCSoTHfYNYkPOh7mk', form_container);
+xhr_object.initialize();
 
 /* attach a submit handler to the form */
 $("#contactForm").submit(function (event) {
@@ -10,27 +13,38 @@ $("#contactForm").submit(function (event) {
     var $form = $(this),
         url = $form.attr('action');
 
-    /* Send the data using post */
-    var posting = $.post(url,
-        {
-            emfid_3605533: $('#contact-name').val(),
-            emfid_3605534: $('#contact-email').val(),
-            emfid_3605536: $('#contact-phone').val(),
-            emfid_3605537: $('#contact-message').val()
+    var name_val = $('#contact-name').val();
+    var email_val = $('#contact-email').val();
+    var phone_val = $('#contact-phone').val();
+    var enquiry_val = $('#contact-message').val();
+
+
+    $('#contact-form-container-hidden input[name="emfid_3605533"]').val(name_val);
+    $('#contact-form-container-hidden input[name="emfid_3605535"]').val(email_val);
+    $('#contact-form-container-hidden input[name="emfid_3605536"]').val(phone_val);
+    $('#contact-form-container-hidden textarea[name="emfid_3605537"]').val(enquiry_val);
+
+    setTimeout(function(){
+        xhr_object._field_data.forEach(function (i) {
+            switch (i.id){
+                case "emfid_3605533":
+                    i.value = name_val;
+                    break;
+                case "emfid_3605535":
+                    i.value = email_val;
+                    break;
+                case "emfid_3605536":
+                    i.value = phone_val;
+                    break;
+                case "emfid_3605537":
+                    i.value = enquiry_val;
+                    break;
+            }
         });
+        xhr_object.processSubmit();
+    }, 10);
 
-    /* Alerts the results */
-    posting.done(function (data) {
-        $('#contact-form-heading').text('Thanks, we\'ll get back to you shortly');
-        $('#contactForm').remove();
-        console.log(data);
-    });
 
-    console.log(url);
-    console.log({
-        emfid_3605533: $('#contact-name').val(),
-        emfid_3605534: $('#contact-email').val(),
-        emfid_3605536: $('#contact-phone').val(),
-        emfid_3605537: $('#contact-message').val()
-    });
+    $('#contact-form-heading').text('Thanks, we\'ll get back to you shortly');
+    $('#contactForm').remove();
 });
