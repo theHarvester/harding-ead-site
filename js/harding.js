@@ -48,3 +48,18 @@ $("#contactForm").submit(function (event) {
     $('#contact-form-heading').text('Thanks, we\'ll get back to you shortly');
     $('#contactForm').remove();
 });
+
+$(document).ready(function(){
+    var brand_name = $('#nav-bar-brand-name');
+    var windowResized = function(){
+        if($(window).width() < 991){
+            brand_name.text('Harding E&D');
+        } else {
+            brand_name.text('Harding Electrical & Data');
+        }
+    };
+    $(window).resize(function(){
+        setTimeout(windowResized, 1);
+    });
+    $(window).trigger("resize");
+});

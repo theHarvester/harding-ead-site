@@ -81,6 +81,14 @@ a {
     color: #32da79;
 }
 
+p a:hover, p a:visited, p a:active {
+    color: #32da79;
+}
+
+li a:hover, li a:visited, li a:active {
+    color: #32da79;
+}
+
 .timeline>li .timeline-image,
 .timeline>li .timeline-image:active,
 .timeline>li .timeline-image:focus {
@@ -125,6 +133,15 @@ header .intro-text .intro-heading {
     font-size: 50px;
     font-weight: 700;
     line-height: 75px;
+}
+
+@media(max-width:991px) {
+    .intro-heading-2 {
+        font-size: 25px;
+    }
+    section h2.section-heading {
+        font-size: 30px;
+    }
 }
 
 #contact-form-container-hidden {
