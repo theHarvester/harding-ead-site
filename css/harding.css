@@ -147,3 +147,7 @@ header .intro-text .intro-heading {
 #contact-form-container-hidden {
     display: none;
 }
+
+.first-container {
+    background-color: #333;
+}
